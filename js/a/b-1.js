@@ -1,12 +1,12 @@
     // 随机选择背景图片 (1~7.png)
         const bgImages = [
-          '/a/1.png',
-            '/a/2.png',
-            '/a/3.png',
-            '/a/4.png',
-            '/a/5.png',
-            '/a/6.png',
-            '/a/7.png'
+          'https://cdn.jsdmirror.com/gh/annacom155/asset@main/png/a/1.png',
+            'https://cdn.jsdmirror.com/gh/annacom155/asset@main/png/a/2.png',
+            'https://cdn.jsdmirror.com/gh/annacom155/asset@main/png/a/3.png',
+            'https://cdn.jsdmirror.com/gh/annacom155/asset@main/png/a/4.png',
+            'https://cdn.jsdmirror.com/gh/annacom155/asset@main/png/a/5.png',
+            'https://cdn.jsdmirror.com/gh/annacom155/asset@main/png/a/6.png',
+            'https://cdn.jsdmirror.com/gh/annacom155/asset@main/png/a/7.png'
         ];
         
         // 随机选择一张图片
