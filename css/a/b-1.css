@@ -1,4 +1,4 @@
-        * {
+ * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -70,9 +70,10 @@
             z-index: 2;
         }
         
+        /* 真实眼睛头像样式 */
         .avatar {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             border: 4px solid rgba(255, 255, 255, 0.3);
             margin: 0 auto 15px;
@@ -80,8 +81,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            color: #6a11cb;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
             transition: all 0.4s ease;
             animation: avatarFloat 3s ease-in-out infinite;
         }
@@ -98,6 +100,95 @@
         .avatar:hover {
             transform: scale(1.1) rotate(5deg);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .eye-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .eye {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 5px;
+            box-shadow: 
+                0 0 0 3px #f8f8f8,
+                0 0 10px rgba(0, 0, 0, 0.2),
+                inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .eye::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            z-index: 3;
+        }
+        
+        .iris {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(circle at 35% 35%, #5a381d, #3a2818, #1a1008);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            transition: transform 0.1s ease-out;
+            box-shadow: 
+                inset 0 0 10px rgba(0, 0, 0, 0.8),
+                0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .iris::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle at 30% 30%, #8b6914, #5a381d, #3a2818);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .pupil {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle, #000, #1a1008);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            transition: transform 0.1s ease-out;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .pupil::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(255,255,255,0.3));
+            border-radius: 50%;
+            top: 25%;
+            left: 25%;
+            z-index: 3;
         }
         
         .name {
@@ -407,8 +498,22 @@
             }
             
             .avatar {
-                width: 80px;
-                height: 80px;
-                font-size: 32px;
+                width: 100px;
+                height: 100px;
+            }
+            
+            .eye {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .iris {
+                width: 22px;
+                height: 22px;
+            }
+            
+            .pupil {
+                width: 10px;
+                height: 10px;
             }
         }
